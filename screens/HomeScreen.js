@@ -72,9 +72,7 @@ const HomeScreen = () => {
   const filtPersons = (val) => {
     if (inputVal.length > 0) {
     const filterPersons = persons.filter(person => person.name.toLowerCase().includes(val.toLowerCase()));
-    setFilterPersons(filterPersons);
-  } else {
-    setFilterPersons(persons);
+    setFilteredPersons(filterPersons);
   }
 }
 
@@ -124,7 +122,7 @@ const HomeScreen = () => {
                 style={tw`text-gray-500`}
                 onChange={(e) => {
                   setInputVal(e.target.value);
-                  filtPersons(e.target.value);
+                  setFilteredPersons(e.target.value);
                 }}
                 value={inputVal}
                 placeholder="Search"
